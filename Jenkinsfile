@@ -10,9 +10,9 @@ node('master')
    }
    stage('ContinuousDeployment')
    {
-       sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.0.103:/var/lib/tomcat8/webapps/testapp.war'
+       sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.28.112:/var/lib/tomcat8/webapps/testapp.war'
    }
-   stage('ContinuousTesting')
+   /*stage('ContinuousTesting')
    {
        git 'https://github.com/selenium-saikrishna/FunctionalTesting.git'
    
@@ -24,21 +24,5 @@ node('master')
        input message: 'Wating for Approval from the DM!', submitter: 'srinivas'
        
        sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/ScriptedPipeline/webapp/target/webapp.war ubuntu@172.31.10.26:/var/lib/tomcat8/webapps/prodapp.war'
+   }*/
    }
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-}
